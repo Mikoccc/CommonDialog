@@ -1,0 +1,2 @@
+# CommonDialog
+需要依赖CommonGame和CommonUI依赖，主要增加了Sequencer Dialog轨道
