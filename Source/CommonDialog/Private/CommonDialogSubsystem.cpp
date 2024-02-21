@@ -36,15 +36,14 @@ void UCommonDialogSubsystem::StartDialog(const FCommonDialogConfig& DialogConfig
 		return;
 	}
 
-	//temp get first local player
-	APlayerController* PlayerController = UGameplayStatics::GetPlayerController(this, 0);
-	ULocalPlayer* TempLocalPlayer = PlayerController->GetLocalPlayer();
-
 	CurDialogMode = DialogConfig.Mode;
 	CurDialogSections = LoadAsset->DialogSections;
 	CurSection = CurDialogSections[0];
 	SetInteract(bCanInteract);
-	UCommonUIExtensions::PushStreamedContentToLayer_ForPlayer(TempLocalPlayer, DialogConfig.LayerName, DialogConfig.WidgetClass);
+	for (ULocalPlayer* LocalPlayer : GetGameInstance()->GetLocalPlayers())
+	{
+		UCommonUIExtensions::PushStreamedContentToLayer_ForPlayer(LocalPlayer, DialogConfig.LayerName, DialogConfig.WidgetClass);
+	}
 	OnDialogStart.Broadcast();
 }
 
@@ -90,6 +89,5 @@ void UCommonDialogSubsystem::SetDialogMode(ECommonDialogMode TargetMode)
 void UCommonDialogSubsystem::NotifySequencePush()
 {
 	OnSequencePush.ExecuteIfBound();
-	OnSequencePush.Unbind();
 }
 

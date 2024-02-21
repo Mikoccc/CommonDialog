@@ -85,6 +85,7 @@ struct FCommonDialogExecutionToken final : IMovieSceneExecutionToken
 							PlayerObj->Play();
 						};
 					DialogSubsystem->OnSequencePush.BindLambda(PushSequence);
+					//UE_LOG(LogTemp, Warning, TEXT("Bind The integer value is: %d"), KeyVal.DialogIndexToJump);
 				}
 				break;
 			case FCommonDialogKeyType::End:

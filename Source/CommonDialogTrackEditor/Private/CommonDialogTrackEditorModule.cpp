@@ -31,4 +31,4 @@ void FCommonDialogTrackEditorModule::ShutdownModule()
 
 #undef LOCTEXT_NAMESPACE
 	
-IMPLEMENT_MODULE(FCommonDialogTrackEditorModule, CommonDialogTrack)
+IMPLEMENT_MODULE(FCommonDialogTrackEditorModule, CommonDialogTrackEditor)

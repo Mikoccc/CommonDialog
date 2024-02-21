@@ -75,6 +75,7 @@ public:
 	bool bPause = true;
 };
 
+#if WITH_EDITOR
 namespace MovieSceneClipboard
 {
 	template<> inline FName GetKeyTypeName<FCommonDialogChannelKeyVal>()
@@ -82,6 +83,7 @@ namespace MovieSceneClipboard
 		return "FCommonDialogChannelKeyVal";
 	}
 }
+#endif
 
 USTRUCT()
 struct COMMONDIALOGTRACK_API FCommonDialogChannel : public FMovieSceneChannel

@@ -14,4 +14,4 @@ void FCommonDialogModule::ShutdownModule()
 }
 #undef LOCTEXT_NAMESPACE
 
-IMPLEMENT_MODULE(FCommonDialogModule, CommonDialogModule)
+IMPLEMENT_MODULE(FCommonDialogModule, CommonDialog)

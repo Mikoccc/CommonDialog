@@ -24,7 +24,7 @@ bool FCommonDialogChannel::EvaluateTimeByIndex(int DialogIndex,FFrameNumber& Tim
 {
 	for (int i = 0; i < KeyValues.Num(); i++)
 	{
-		if (DialogIndex == KeyValues[i].DialogIndex)
+		if (KeyValues[i].KeyType == FCommonDialogKeyType::Begin && DialogIndex == KeyValues[i].DialogIndex)
 		{
 			Time = KeyTimes[i];
 			return true;
